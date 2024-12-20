@@ -7,6 +7,6 @@ email = "rudra@gmail.com"
 # a placeholder can contain variables, operations, functions, 
 # and modifiers to format the value.
 
-print(f"hello {first_name}")
+print(f"Hi {first_name}")
 print(f"you like {food}")
 print(f"your email is: {email}")
