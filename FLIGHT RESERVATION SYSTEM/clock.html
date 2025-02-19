@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Clock</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            transition: background 0.5s, color 0.5s;
+        }
+        
+        .clock-container {
+            font-size: 2rem;
+            padding: 20px;
+            border: 2px solid #333;
+            display: inline-block;
+            border-radius: 10px;
+            transition: background 0.5s, color 0.5s;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            background-color: #333;
+            color: white;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+
+        /* Dark Theme */
+        .dark {
+            background: #222;
+            color: white;
+        }
+
+        .dark .clock-container {
+            border-color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="clock-container" id="clock"></div>
+    <br>
+    <button onclick="toggleTheme()">Toggle Theme</button>
+
+    <script>
+        function updateClock() {
+            const clockElement = document.getElementById("clock");
+            const now = new Date();
+
+            const timeString = now.toLocaleTimeString();
+            const dateString = now.toLocaleDateString();
+
+            clockElement.innerHTML = `${timeString} <br> ${dateString}`;
+        }
+
+        function toggleTheme() {
+            document.body.classList.toggle("dark");
+        }
+
+        setInterval(updateClock, 1000);
+        updateClock(); // Initial call to display immediately
+    </script>
+</body>
+</html>

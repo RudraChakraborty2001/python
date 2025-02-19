@@ -1,7 +1,7 @@
 # with the help of this code we are able to finde a word in a paragraph
 import re
 
-pattern = r"[a-z]+ing"
+pattern = "of"
 
 text = '''Most of us have childhood memories of gaping at our elders in wonder
  when they narrated to us the amusing fables of Aesop, the picturesque fairy tales,
@@ -11,6 +11,5 @@ text = '''Most of us have childhood memories of gaping at our elders in wonder
      with colourful illustrations to make the most of the leisure reading of kids. 
 '''
 
-matchs = re.finditer(pattern, text)
-for match in matchs:
-    print(match)
+match = re.search(pattern, text)
+print(match)
